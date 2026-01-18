@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional pressure washing, deck restoration, and gutter services in Northern Virginia. Licensed & insured. 5-star rated.">
+    <title>Suburban Powerwash and Restoration | Northern Virginia Pressure Washing Services</title>
+
+    <style>
+        /* ==================== CSS VARIABLES ==================== */
+        :root {
+            --primary-blue: #2563eb;
+            --dark-navy: #1e3a8a;
+            --accent-orange: #f59e0b;
+            --white: #ffffff;
+            --light-bg: #f9fafb;
+            --dark-bg: #1f2937;
+            --text-dark: #111827;
+            --text-gray: #6b7280;
+            --shadow: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+            --gold: #fbbf24;
+        }
+
+        /* ==================== RESET & BASE STYLES ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ==================== UTILITY CLASSES ==================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-navy);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        .btn-accent {
+            background: var(--accent-orange);
+            color: var(--white);
+        }
+
+        .btn-accent:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .navbar.scrolled .logo {
+            color: var(--primary-blue);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--text-dark);
+        }
+
+        .nav-link:hover {
+            color: var(--accent-orange);
+        }
+
+        .nav-phone {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .navbar.scrolled .nav-phone {
+            color: var(--primary-blue);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled .hamburger span {
+            background: var(--primary-blue);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            padding: 2rem;
+            z-index: 1001;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .close-menu {
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .mobile-nav-menu {
+            list-style: none;
+        }
+
+        .mobile-nav-menu li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-nav-menu .nav-link {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+        }
+
+        .menu-overlay.active {
+            display: block;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px);
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-badge::before {
+            content: '✓';
+            font-weight: 700;
+            color: var(--accent-orange);
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-price {
+            font-weight: 700;
+            color: var(--accent-orange);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-link {
+            color: var(--primary-blue);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-link:hover {
+            color: var(--dark-navy);
+        }
+
+        /* ==================== TESTIMONIALS SECTION ==================== */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card blockquote {
+            font-style: italic;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-card cite {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-style: normal;
+        }
+
+        .review-badge {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .review-badge a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* ==================== WHY CHOOSE US SECTION ==================== */
+        .why-choose {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .why-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .why-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-blue);
+        }
+
+        .why-item p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* ==================== SERVICE AREA SECTION ==================== */
+        .service-area {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, #e0e7ff 0%, #dbeafe 100%);
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            box-shadow: var(--shadow);
+        }
+
+        .cities-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .city-badge {
+            background: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            color: var(--text-dark);
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .city-badge:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ==================== GALLERY SECTION ==================== */
+        .gallery {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-before {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .gallery-after {
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .gallery-cta {
+            text-align: center;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .contact-form .subtitle {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--dark-navy);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+
+        .info-item {
+            margin-bottom: 2rem;
+        }
+
+        .info-item h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .info-item p,
+        .info-item a {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .info-item a {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .info-item a:hover {
+            color: var(--dark-navy);
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .payment-badge {
+            padding: 0.5rem 1rem;
+            background: var(--light-bg);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-gray);
+        }
+
+        .success-message {
+            background: #10b981;
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .success-message h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand p {
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-blue);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #9ca3af;
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 1024px) {
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .testimonials-grid,
+            .why-grid,
+            .gallery-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .area-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .services,
+            .testimonials,
+            .why-choose,
+            .service-area,
+            .gallery,
+            .contact {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Suburban Powerwash</a>
+
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="tel:571-318-2878" class="nav-phone">571-318-2878</a></li>
+                <li><a href="#contact" class="btn btn-accent">Get Quote</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo" style="color: var(--primary-blue);">Menu</span>
+            <span class="close-menu" id="closeMenu">&times;</span>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="#home" class="nav-link mobile-nav-link">Home</a></li>
+            <li><a href="#services" class="nav-link mobile-nav-link">Services</a></li>
+            <li><a href="#gallery" class="nav-link mobile-nav-link">Gallery</a></li>
+            <li><a href="#about" class="nav-link mobile-nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link mobile-nav-link">Contact</a></li>
+            <li><a href="#blog" class="nav-link mobile-nav-link">Blog</a></li>
+            <li><a href="tel:571-318-2878" class="nav-link mobile-nav-link">571-318-2878</a></li>
+            <li><a href="#contact" class="btn btn-accent" style="margin-top: 1rem;">Get Quote</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Suburban Powerwash and Restoration</h1>
+            <p class="hero-tagline">Restoring Beauty to Northern Virginia Homes</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-accent">Get Free Quote</a>
+                <a href="#gallery" class="btn btn-secondary">View Our Work</a>
+            </div>
+            <div class="trust-badges">
+                <span class="trust-badge">Licensed & Insured</span>
+                <span class="trust-badge">5-Star Rated</span>
+                <span class="trust-badge">Serving NoVA Since 2021</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <!-- Service Card 1: Pressure Washing -->
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Pressure washing icon">
+                        <path d="M20 10 L25 5 L30 10 L30 25 L25 30 L20 25 Z" fill="#2563eb"/>
+                        <rect x="22" y="25" width="6" height="20" fill="#1e3a8a"/>
+                        <circle cx="15" cy="50" r="2" fill="#60a5fa"/>
+                        <circle cx="20" cy="55" r="2" fill="#60a5fa"/>
+                        <circle cx="25" cy="52" r="2" fill="#60a5fa"/>
+                        <circle cx="30" cy="58" r="2" fill="#60a5fa"/>
+                        <circle cx="35" cy="54" r="2" fill="#60a5fa"/>
+                        <circle cx="40" cy="57" r="2" fill="#60a5fa"/>
+                        <line x1="25" y1="45" x2="35" y2="55" stroke="#2563eb" stroke-width="2"/>
+                    </svg>
+                    <h3>Pressure Washing Services</h3>
+                    <p>Professional cleaning for driveways, patios, walkways, vinyl siding, and brick. We safely remove dirt, grime, and stains to restore your property's curb appeal.</p>
+                    <div class="service-price">Starting at $150</div>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+
+                <!-- Service Card 2: Deck Restoration -->
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Deck restoration icon">
+                        <rect x="5" y="20" width="54" height="30" rx="2" fill="#2563eb"/>
+                        <line x1="5" y1="25" x2="59" y2="25" stroke="#1e3a8a" stroke-width="1"/>
+                        <line x1="5" y1="30" x2="59" y2="30" stroke="#1e3a8a" stroke-width="1"/>
+                        <line x1="5" y1="35" x2="59" y2="35" stroke="#1e3a8a" stroke-width="1"/>
+                        <line x1="5" y1="40" x2="59" y2="40" stroke="#1e3a8a" stroke-width="1"/>
+                        <line x1="5" y1="45" x2="59" y2="45" stroke="#1e3a8a" stroke-width="1"/>
+                        <rect x="10" y="50" width="4" height="10" fill="#1e3a8a"/>
+                        <rect x="30" y="50" width="4" height="10" fill="#1e3a8a"/>
+                        <rect x="50" y="50" width="4" height="10" fill="#1e3a8a"/>
+                    </svg>
+                    <h3>Deck Restoration & Staining</h3>
+                    <p>Complete deck transformation including deep cleaning, board repair/replacement, professional staining, and protective sealing to extend your deck's life.</p>
+                    <div class="service-price">Starting at $500</div>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+
+                <!-- Service Card 3: Gutter Services -->
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Gutter cleaning icon">
+                        <path d="M10 15 L32 5 L54 15 L54 30 L10 30 Z" fill="#2563eb"/>
+                        <rect x="15" y="30" width="34" height="3" fill="#1e3a8a"/>
+                        <path d="M15 33 L17 40 L19 45 Q19 48 17 50 L15 55" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+                        <path d="M49 33 L47 40 L45 45 Q45 48 47 50 L49 55" stroke="#1e3a8a" stroke-width="2" fill="none"/>
+                        <circle cx="17" cy="55" r="1.5" fill="#60a5fa"/>
+                        <circle cx="47" cy="55" r="1.5" fill="#60a5fa"/>
+                        <line x1="22" y1="15" x2="22" y2="25" stroke="#1e3a8a" stroke-width="1"/>
+                        <line x1="32" y1="10" x2="32" y2="25" stroke="#1e3a8a" stroke-width="1"/>
+                        <line x1="42" y1="15" x2="42" y2="25" stroke="#1e3a8a" stroke-width="1"/>
+                    </svg>
+                    <h3>Gutter Cleaning & Guards</h3>
+                    <p>Thorough gutter cleaning to prevent water damage, plus professional gutter guard installation to keep your gutters flowing freely year-round.</p>
+                    <div class="service-price">Starting at $125</div>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Outstanding service! They transformed my grimy driveway and patio. The team was professional, punctual, and the results exceeded my expectations. Highly recommend!"</blockquote>
+                    <cite>— Sarah M., Alexandria</cite>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Our deck looks brand new after their restoration service. The staining was flawless and they took great care with every detail. Worth every penny!"</blockquote>
+                    <cite>— Michael T., Fairfax</cite>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Best gutter cleaning service we've used. They were thorough, cleaned up perfectly, and even identified a drainage issue we didn't know about. True professionals!"</blockquote>
+                    <cite>— Jennifer L., Arlington</cite>
+                </div>
+            </div>
+
+            <div class="review-badge">
+                <a href="https://www.google.com/search?q=suburban+powerwash+and+restoration" target="_blank" rel="noopener">
+                    <span style="font-size: 1.5rem;">⭐</span>
+                    <span>4.9 Google Rating - Read More Reviews</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose" id="about">
+        <div class="container">
+            <h2 class="section-title">Why Choose Suburban Powerwash?</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <svg class="why-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Licensed and insured icon">
+                        <path d="M32 8 L12 18 L12 32 Q12 45 32 56 Q52 45 52 32 L52 18 Z" fill="#2563eb" stroke="#1e3a8a" stroke-width="2"/>
+                        <path d="M22 32 L28 38 L42 24" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3>Licensed & Insured</h3>
+                    <p>Fully licensed and insured for your peace of mind. We protect your property and our team.</p>
+                </div>
+
+                <div class="why-item">
+                    <svg class="why-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Experienced team icon">
+                        <circle cx="32" cy="20" r="8" fill="#2563eb"/>
+                        <path d="M32 30 Q20 30 16 40 L16 50 L48 50 L48 40 Q44 30 32 30" fill="#2563eb"/>
+                        <circle cx="48" cy="24" r="6" fill="#1e3a8a"/>
+                        <path d="M48 32 Q58 32 60 40 L60 50 L50 50" fill="#1e3a8a"/>
+                        <circle cx="16" cy="24" r="6" fill="#1e3a8a"/>
+                        <path d="M16 32 Q6 32 4 40 L4 50 L14 50" fill="#1e3a8a"/>
+                    </svg>
+                    <h3>Experienced Team</h3>
+                    <p>Our skilled professionals have years of experience delivering exceptional results.</p>
+                </div>
+
+                <div class="why-item">
+                    <svg class="why-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Eco-friendly icon">
+                        <circle cx="32" cy="40" r="18" fill="#2563eb"/>
+                        <path d="M32 8 Q32 22 40 30 Q32 30 32 40 Q32 30 24 30 Q32 22 32 8" fill="#10b981"/>
+                        <path d="M24 30 Q18 35 18 40" stroke="#10b981" stroke-width="2" fill="none"/>
+                        <path d="M40 30 Q46 35 46 40" stroke="#10b981" stroke-width="2" fill="none"/>
+                    </svg>
+                    <h3>Eco-Friendly</h3>
+                    <p>We use environmentally safe products that are tough on dirt but gentle on nature.</p>
+                </div>
+
+                <div class="why-item">
+                    <svg class="why-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Satisfaction guaranteed icon">
+                        <circle cx="32" cy="32" r="24" fill="#2563eb" stroke="#1e3a8a" stroke-width="2"/>
+                        <path d="M20 30 Q32 42 44 30" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <circle cx="24" cy="24" r="2" fill="white"/>
+                        <circle cx="40" cy="24" r="2" fill="white"/>
+                    </svg>
+                    <h3>Satisfaction Guaranteed</h3>
+                    <p>We're not happy unless you're thrilled with the results. 100% satisfaction guaranteed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="service-area">
+        <div class="container">
+            <h2 class="section-title">Proudly Serving Northern Virginia</h2>
+            <div class="area-grid">
+                <div class="map-placeholder">
+                    📍 Service Area Map
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Cities We Serve</h3>
+                    <div class="cities-list">
+                        <span class="city-badge">Alexandria</span>
+                        <span class="city-badge">Arlington</span>
+                        <span class="city-badge">Fairfax</span>
+                        <span class="city-badge">Falls Church</span>
+                        <span class="city-badge">Vienna</span>
+                        <span class="city-badge">McLean</span>
+                        <span class="city-badge">Reston</span>
+                        <span class="city-badge">Herndon</span>
+                        <span class="city-badge">Centreville</span>
+                        <span class="city-badge">Manassas</span>
+                        <span class="city-badge">Springfield</span>
+                        <span class="city-badge">Annandale</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-before">BEFORE</div>
+                    <div class="gallery-after">AFTER</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-before">BEFORE</div>
+                    <div class="gallery-after">AFTER</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-before">BEFORE</div>
+                    <div class="gallery-after">AFTER</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-before">BEFORE</div>
+                    <div class="gallery-after">AFTER</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-before">BEFORE</div>
+                    <div class="gallery-after">AFTER</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-before">BEFORE</div>
+                    <div class="gallery-after">AFTER</div>
+                </div>
+            </div>
+            <div class="gallery-cta">
+                <a href="#gallery" class="btn btn-primary">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form" id="contactForm">
+                    <h2>Get Your Free Quote Today</h2>
+                    <p class="subtitle">We respond within 24 hours</p>
+                    <form id="quoteForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Type *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service...</option>
+                                <option value="pressure-washing">Pressure Washing</option>
+                                <option value="deck-restoration">Deck Restoration</option>
+                                <option value="gutter-services">Gutter Services</option>
+                                <option value="multiple">Multiple Services</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Request Quote</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+
+                    <div class="info-item">
+                        <h4>Phone</h4>
+                        <a href="tel:571-318-2878">571-318-2878</a>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>Email</h4>
+                        <a href="mailto:info@suburbanpowerwash.com">info@suburbanpowerwash.com</a>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>Business Hours</h4>
+                        <p>Mon-Sat: 8am - 6pm<br>Sun: Closed</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>Payment Methods</h4>
+                        <div class="payment-methods">
+                            <span class="payment-badge">Cash</span>
+                            <span class="payment-badge">Check</span>
+                            <span class="payment-badge">Visa</span>
+                            <span class="payment-badge">Mastercard</span>
+                            <span class="payment-badge">Venmo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Suburban Powerwash</h3>
+                    <p>Restoring beauty to Northern Virginia homes since 2021.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="18" cy="6" r="1"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Service Areas</h4>
+                    <ul>
+                        <li><a href="#service-area">Alexandria</a></li>
+                        <li><a href="#service-area">Arlington</a></li>
+                        <li><a href="#service-area">Fairfax</a></li>
+                        <li><a href="#service-area">McLean</a></li>
+                        <li><a href="#service-area">Reston</a></li>
+                        <li><a href="#service-area">Vienna</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Suburban Powerwash and Restoration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== STICKY NAVIGATION ====================
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ==================== MOBILE MENU TOGGLE ====================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', openMobileMenu);
+        closeMenu.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking on a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // ==================== SMOOTH SCROLLING ====================
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+
+                // Only handle anchor links, not just "#"
+                if (href !== '#' && href.length > 1) {
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // ==================== FORM SUBMISSION ====================
+        const quoteForm = document.getElementById('quoteForm');
+        const contactFormContainer = document.getElementById('contactForm');
+
+        quoteForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            // Basic validation
+            if (!name || !phone || !email || !service) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission (in production, this would send to a server)
+            setTimeout(() => {
+                // Display success message
+                contactFormContainer.innerHTML = `
+                    <div class="success-message">
+                        <h3>Thank You, ${name}!</h3>
+                        <p>We've received your quote request and will contact you within 24 hours.</p>
+                        <p style="margin-top: 1rem;">Need immediate assistance? Call us at <a href="tel:571-318-2878" style="color: white; text-decoration: underline;">571-318-2878</a></p>
+                    </div>
+                `;
+
+                // Log form data (in production, this would be sent to a server)
+                console.log('Form submitted:', {
+                    name,
+                    phone,
+                    email,
+                    service,
+                    message
+                });
+            }, 1500);
+        });
+
+        // ==================== INTERSECTION OBSERVER (FADE IN ANIMATIONS) ====================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => observer.observe(card));
+
+        // Observe testimonial cards
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        testimonialCards.forEach(card => observer.observe(card));
+
+        // Observe why items
+        const whyItems = document.querySelectorAll('.why-item');
+        whyItems.forEach(item => observer.observe(item));
+
+        // ==================== SCROLL TO TOP ON PAGE LOAD ====================
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+</html>
