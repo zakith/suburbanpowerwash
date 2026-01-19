@@ -529,18 +529,16 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin-bottom: 3rem;
         }
 
         .gallery-item {
-            height: 250px;
+            height: 300px;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -549,24 +547,10 @@
             transform: scale(1.02);
         }
 
-        .gallery-before {
-            background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .gallery-after {
-            background: linear-gradient(135deg, #D4AF37 0%, #B8941E 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 700;
-            font-size: 1.1rem;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .gallery-cta {
@@ -831,7 +815,7 @@
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
         }
 
@@ -1099,24 +1083,16 @@
             <h2 class="section-title">Recent Projects</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/gallery1.jpg" alt="Recent project 1" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="images/gallery1.jpg" alt="Recent project 1">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery2.jpg" alt="Recent project 2" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="images/gallery2.jpg" alt="Recent project 2">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery3.jpg" alt="Recent project 3" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="images/gallery3.jpg" alt="Recent project 3">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery4.jpg" alt="Recent project 4" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-before">BEFORE</div>
-                    <div class="gallery-after">AFTER</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-before">BEFORE</div>
-                    <div class="gallery-after">AFTER</div>
+                    <img src="images/gallery4.jpg" alt="Recent project 4">
                 </div>
             </div>
             <div class="gallery-cta">
